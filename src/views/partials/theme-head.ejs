@@ -1,0 +1,13 @@
+<script>
+  (function () {
+    try {
+      var storageKey = "ol-theme";
+      var saved = localStorage.getItem(storageKey);
+      var systemPrefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = saved || (systemPrefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
