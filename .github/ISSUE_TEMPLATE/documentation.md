@@ -1,19 +1,28 @@
 ---
 name: 📚 Documentation
-about: Improvements or additions to documentation
+about: Propose improvements or fixes to project documentation or API specs
 title: "[DOCS] "
 labels: ["documentation"]
 assignees: []
 ---
 
-## 📚 Documentation Issue
+## 📚 Documentation Section
 
-<!-- Is something missing, unclear, or incorrect? -->
+- [ ] Project Setup & Quickstart ([README.md](file:///README.md))
+- [ ] Swagger / OpenAPI Specification (`src/swagger.yaml`)
+- [ ] Environment Configuration (`.env.example`)
+- [ ] Docker & Containerization (`docker-compose.yml`)
+- [ ] Contributing Guidelines ([CONTRIBUTING.md](file:///CONTRIBUTING.md))
+- [ ] Codebase Comments / JSDoc
 
-## 💡 Suggested Improvement
+## 🔍 Issue Description
 
-<!-- Describe how we can improve the documentation. -->
+<!-- What part of the documentation is missing, inaccurate, or needs clarification? -->
 
-## 🔗 Related Pages
+## 💡 Proposed Improvement
 
-<!-- Links to the affected documentation pages. -->
+<!-- Provide the corrected text, missing endpoint documentation, or explanation. -->
+
+## 🔗 References
+
+<!-- Links to relevant lines of code, swagger endpoints, or documentation files. -->

@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  checks:
-    name: Code Quality Checks
+  quality:
+    name: Code Quality & Syntax Checks
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 12
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,8 +29,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check code formatting
-        run: pnpm format:check
+      - name: Check code formatting (Prettier)
+        run: pnpm run format:check
 
-      - name: Run build
-        run: pnpm build
+      - name: Validate JavaScript syntax
+        run: |
+          find src -type f -name "*.js" -exec node --check {} +
+
+      - name: Run build check
+        run: pnpm run build

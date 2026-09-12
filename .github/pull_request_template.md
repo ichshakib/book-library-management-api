@@ -1,36 +1,43 @@
-## Description
+## 📋 Summary
 
-<!-- Provide a brief description of the changes in this PR. -->
+<!-- Provide a brief description of what this PR introduces or fixes for the Book Library Management API. -->
 
-## Type of Change
+## 🔗 Related Issue
 
-- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
-- [ ] ✨ New feature (non-breaking change which adds functionality)
-- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] 📝 Documentation update
-- [ ] ♻️ Code refactoring
-- [ ] ⚡ Performance improvement
-- [ ] 🎨 Style / UI change
+<!-- Link related issues (e.g. Closes #12, Fixes #45) -->
 
-## Related Issues
+## 🛠️ Type of Change
 
-<!-- Link any related issues here. Use "Closes #123" to auto-close them on merge. -->
+- [ ] 🐛 Bug fix (non-breaking change fixing an issue)
+- [ ] ✨ New feature (non-breaking change adding an endpoint or capability)
+- [ ] 💥 Breaking change (fix or feature modifying existing API response/contracts)
+- [ ] 🗄️ Database schema / Model update
+- [ ] 🔐 Auth / Security enhancement
+- [ ] 📖 Documentation / Swagger update
+- [ ] ⚡ Performance improvement / Refactoring
 
-## Changes Made
+## 📡 Affected API Endpoints (if applicable)
 
-<!-- List the key changes made in this PR. -->
+| Method                | Endpoint      | Description |
+| :-------------------- | :------------ | :---------- |
+| `GET/POST/PUT/DELETE` | `/api/v1/...` |             |
 
--
+## ⚙️ Environment / Configuration Changes
 
-## Screenshots
+- [ ] Requires new environment variable(s) (Updated `.env.example`)
+- [ ] Requires database re-seeding (`pnpm run seed`)
+- [ ] No configuration changes required
 
-<!-- If applicable, add screenshots or recordings to demonstrate the change. -->
+## 🧪 Testing & Verification
 
-## Checklist
+- [ ] Tested endpoint(s) locally using cURL / Postman / Swagger UI (`http://localhost:7000/`)
+- [ ] Verified database read/write in MongoDB
+- [ ] Ran `pnpm run format:check` and all files adhere to Prettier standards
+- [ ] JavaScript syntax validated (`node --check` across `src/`)
 
-- [ ] My code follows the project's code style and conventions
-- [ ] I have performed a self-review of my code
-- [ ] I have updated documentation where necessary
-- [ ] My changes do not introduce breaking changes (or they are documented above)
-- [ ] I have added comments to complex or non-obvious code
-- [ ] `pnpm format:check` passes without errors
+## 📋 Checklist
+
+- [ ] My code follows the project's code style and architectural conventions
+- [ ] I have updated [README.md](file:///README.md) or [swagger.yaml](file:///src/swagger.yaml) if API contracts changed
+- [ ] My changes do not introduce unhandled errors or memory leaks
+- [ ] Sensitive secrets or `.env` files are not included in this PR

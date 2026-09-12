@@ -1,6 +1,6 @@
 ---
 name: 🐛 Bug Report
-about: Create a report to help us improve the Book Library Management API
+about: Report a bug or issue in the Book Library Management API
 title: "[BUG] "
 labels: ["bug"]
 assignees: []
@@ -10,39 +10,47 @@ assignees: []
 
 <!-- A clear and concise description of what the bug is. -->
 
-## 🛠️ Feature Area
+## 🛠️ Affected Component
 
-- [ ] Auth (Passport.js, JWT)
-- [ ] Book Management
-- [ ] Review/Favorite System
-- [ ] Email/Notification
-- [ ] Deployment/Docker
-- [ ] API Documentation (Swagger)
-- [ ] Other: **\_\_**
+- [ ] Authentication / Session (JWT, Passport.js, Cookies)
+- [ ] OAuth SSO (Google / GitHub)
+- [ ] Book Management (`/books`)
+- [ ] Reviews & Ratings (`/reviews`)
+- [ ] User Favorites (`/favorites`)
+- [ ] Email Notifications (Nodemailer / MailHog)
+- [ ] Swagger API Docs (`/`)
+- [ ] Docker / Deployment
+- [ ] Other
+
+## 📡 Request Details (if API-related)
+
+- **HTTP Method:** `GET` / `POST` / `PUT` / `DELETE` / `PATCH`
+- **Endpoint URL:** `http://localhost:7000/...`
+- **Request Body (JSON / FormData):**
+  ```json
+  {}
+  ```
 
 ## 🔁 Reproduction Steps
 
-<!-- Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '...'
-3. Scroll down to '...'
-4. See error
--->
+1. Start server with `pnpm run dev`
+2. Send request to `...`
+3. See error response / server crash
 
-## 🧐 Expected Behavior
+## 🧐 Expected vs Actual Behavior
 
-<!-- A clear and concise description of what you expected to happen. -->
+- **Expected Response:** (e.g. `200 OK` with `{ statusCode: 200, data: ... }`)
+- **Actual Response:** (e.g. `500 Internal Server Error` or unexpected status code)
 
-## 📸 Screenshots
+## 📋 Server Console Logs / Stack Trace
 
-<!-- If applicable, add screenshots to help explain your problem. -->
+```text
+<!-- Paste error logs from terminal or Docker container here -->
+```
 
 ## 💻 Environment
 
-- **OS:** [e.g. Windows 11, macOS Sequoia]
-- **Browser:** [e.g. Chrome 120, Safari 17]
-- **Version:** [e.g. v0.1.0]
-
-## 📋 Additional Context
-
-<!-- Add any other context about the problem here (e.g. console logs, AI response IDs). -->
+- **Node.js Version:** [e.g. v20.18.0, v22.12.0]
+- **pnpm Version:** [e.g. 12.4.1]
+- **MongoDB:** [e.g. Local v7.0, Docker container, MongoDB Atlas]
+- **Operating System:** [e.g. Windows 11, Ubuntu 24.04, macOS]
