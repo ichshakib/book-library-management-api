@@ -1,10 +1,16 @@
 {
   "name": "book-library-management-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A comprehensive full-stack digital library management system built with Node.js, featuring user authentication, book management, reviews, favorites, and a robust email notification system.",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "build": "echo 'No build step required for server'",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "seed": "node src/seeds/admin.seed.js",
+    "mongodb:teardown": "node src/scripts/mongodb-teardown.js"
   },
   "keywords": [],
   "author": "",
