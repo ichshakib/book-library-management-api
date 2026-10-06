@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Swagger API Documentation
+    url: http://localhost:7000/
+    about: Explore and test the API interactive documentation locally
+  - name: 💬 GitHub Discussions
+    url: https://github.com/ichshakib/book-library-management-api/discussions
+    about: Ask general questions or discuss ideas with the community
