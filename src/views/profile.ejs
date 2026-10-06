@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%- include('partials/theme-head') %>
+    <title><%= pageTitle %></title>
+    <meta name="description" content="<%= pageDescription %>" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="<%= pageTitle %>" />
+    <meta property="og:description" content="<%= pageDescription %>" />
+    <% if (canonicalUrl) { %>
+    <link rel="canonical" href="<%= canonicalUrl %>" />
+    <meta property="og:url" content="<%= canonicalUrl %>" />
+    <% } %>
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#2563EB" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <script src="/js/theme.js" defer></script>
+  </head>
+  <body>
+    <%- include('partials/header', { activePage: 'profile' }) %>
+
+    <main id="main-content" class="page page--compact profile-page" role="main">
+      <div class="profile-layout-v2">
+        <header class="profile" style="margin-bottom: 48px;">
+          <div class="avatar" aria-hidden="true" style="width: 80px; height: 80px;">
+            <% if (profile && profile.avatar) { %>
+            <img src="<%= profile.avatar %>" alt="Avatar for <%= user?.username || profile?.fullName || 'User' %>" />
+            <% } else { %>
+            <span class="avatar__initial" style="font-size: 28px;"><%= (user?.username || user?.email || "U").substring(0, 1).toUpperCase() %></span>
+            <% } %>
+          </div>
+          <div class="meta">
+            <h1 itemprop="name" style="font-size: 32px; margin-bottom: 8px;"><%= profile?.fullName || user?.username || "Reader" %></h1>
+            <p class="muted" itemprop="email" style="font-size: 16px; margin-bottom: 12px;"><%= user?.email %></p>
+            <div class="badges">
+              <span class="badge">
+                <i data-lucide="star" style="width: 14px; height: 14px;"></i>
+                <%= (user?.role || "USER").toString().toUpperCase() %>
+              </span>
+              <span class="badge badge--muted">
+                Member since <%= (user?.createdAt ? new Date(user.createdAt).toLocaleDateString("en-US", { year: "numeric", month: "short" }) : "Recently") %>
+              </span>
+            </div>
+          </div>
+        </header>
+
+        <section class="profile-sections-minimal" style="display: flex; flex-direction: column; gap: 48px;">
+          <div class="profile-section">
+            <h2 class="section-title" style="margin-bottom: 16px; font-size: 20px;">Account Information</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+              <div>
+                <p class="muted" style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Username</p>
+                <p><%= user?.username || "—" %></p>
+              </div>
+              <div>
+                <p class="muted" style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Role</p>
+                <p><%= user?.role || "USER" %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h2 class="section-title" style="margin-bottom: 16px; font-size: 20px;">Personal Profile</h2>
+            <div style="max-width: 600px;">
+              <p class="muted" style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Bio</p>
+              <p style="line-height: 1.6;"><%= profile?.bio || "Set a short bio to let others know about your reading taste." %></p>
+              <div class="actions" style="margin-top: 16px;">
+                <a class="btn" href="/profile">Edit Profile</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h2 class="section-title" style="margin-bottom: 16px; font-size: 20px;">Library & Preferences</h2>
+            <p class="muted" style="margin-bottom: 16px;">Quickly access your saved collections or browse for new arrivals.</p>
+            <div class="actions">
+              <a class="btn" href="/">Browse Books</a>
+              <a class="btn" href="/favorite-books">View Favorites</a>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h2 class="section-title" style="margin-bottom: 16px; font-size: 20px;">Security</h2>
+            <p class="muted" style="margin-bottom: 16px;">Manage your session and account security settings.</p>
+            <div class="actions">
+              <a class="btn" href="/sign-out">Sign out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
